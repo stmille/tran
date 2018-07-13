@@ -1,0 +1,42 @@
+Here is the source for the transmission line applet. I stuck a copyright
+and GNU public license on it. This makes it legal to copy and modify it
+as much as you want. It mostly only requires you to label any changes as
+your own and make the source available if you distribute it.  Read the
+copying file for details. If this is a problem for someone, let me know,
+and we can discuss it.
+
+I'm afraid the comments are few and far between, and since I'm new
+to object oriented programming the style isn't great.
+The source files are:
+
+Tran.java = the main applet code. This sets up the GUI stuff, calculates
+the equations and calls the plotter routines.
+
+Complex.java = a class the implements complex numbers and a subset
+of operations on them that are needed for this applet.
+
+TEMLine.java = an interface that defines the routines I want for a 
+transmission line.
+
+SimpleLine.java = a class that defines the simple transmission line model
+used to determine the complex Z0 and attenuation. I think this is equivalent
+to what Dean Straw N6BV used in TL.EXE.
+
+GenLine.java  =  a class that uses the same input Z0 and propagation constant
+at all frequencies. This is used for userline 2.
+
+TranWindow.java = This is a wrapper that pops up a window and puts
+the applet in it.
+
+You also need the ptplot source or at least the class files. Both are
+available free from http://ptolemy.eecs.berkeley.edu/java/ptplot.
+
+Now type (assuming you have a Java Development Kit installed)
+javac *.java
+or whatever your equivalent command is to compile
+all the java files to class files and you can then type
+java TranWindow
+or equivalent to run it, or install Tran.class as an applet.
+You can also use the Makefile provided if you run unix.
+
+73 Kevin w9cf
